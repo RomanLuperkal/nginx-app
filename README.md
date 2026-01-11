@@ -40,7 +40,7 @@ docker rm -f nginx-server
 
 ```bash
 docker run --name nginx-server -p 8070:80 \
--v /D:/projects/nginx-test/html:/usr/share/nginx/html \
+-v D:/projects/nginx-app/html:/usr/share/nginx/html \
 -d nginx
 ```
 
@@ -78,8 +78,8 @@ docker run --network=backend-network --name backendapp5 -p 8095:8090 --hostname=
 той же сети:
 
 ```bash
-docker run --network=backend-network --name nginx-server -p 8070:8080 \
--v /D:/projects/nginx-test/nginx.conf:/etc/nginx/nginx.conf \
+docker run --rm --network=backend-network --name nginx-server -p 8070:8080 \
+-v D:/projects/nginx-app/nginx.conf:/etc/nginx/nginx.conf \
 -d nginx
 ```
 
